@@ -1,0 +1,36 @@
+$slider-width: 500px;
+$slider-footer-height: 100px;
+.p-sidebar.uagc-slider {
+  width: $slider-width;
+  .p-sidebar-content {
+    padding: 0;
+  }
+  .p-sidebar-header {
+    position: absolute;
+    right: 0;
+    z-index: 100;
+  }
+  .slider-container {
+  }
+
+  .slider-title {
+    padding: 15px 25px;
+    font-size: $h4-font-size;
+  }
+
+  .slider-body {
+    padding: 15px 25px;
+    margin-bottom: $slider-footer-height;
+  }
+
+  .slider-footer {
+    border-top: solid 1px $cloud-400;
+    position: fixed;
+    bottom: 0;
+    width: $slider-width;
+    padding: 30px 25px;
+    text-align: center;
+    height: $slider-footer-height;
+    background-color: $white;
+  }
+}

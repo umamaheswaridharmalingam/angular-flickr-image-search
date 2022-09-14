@@ -1,0 +1,40 @@
+.card-button-list {
+  display: flex;
+  flex-wrap: wrap;
+  .card-button {
+    overflow: initial;
+    text-align: center;
+    min-width: 130px;
+    width: auto;
+    background: $slate-200;
+    border-color: $slate-100;
+    color: $slate-500;
+    margin-right: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-width: 2px;
+    display: block;
+
+    .card-selected-icon {
+      display: none;
+      position: absolute;
+      top: -12px;
+      right: -14px;
+      background-color: $slate-500;
+      color: $white;
+      border-radius: 50%;
+      padding: 6px;
+      font-size: 12px;
+    }
+
+    &:hover {
+      box-shadow: $box-shadow;
+    }
+    &.selected {
+      border-color: $slate-500;
+      .card-selected-icon {
+        display: block;
+      }
+    }
+  }
+}

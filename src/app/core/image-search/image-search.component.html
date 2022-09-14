@@ -1,0 +1,27 @@
+<div class="image-collection-container">
+    <p-panel>
+        <ng-template pTemplate="icons">
+            <div class="flex wrap-on-mobile">
+
+                <div class="flex wrap-on-mobile-top">
+                    <div class="ml-3">
+                        <p-dropdown [options]="types" [(ngModel)]="selectedType" (onChange)="selectProject($event)"
+                            optionLabel="name"></p-dropdown>
+                    </div>
+                    <div class="ml-3">
+                        <p-dropdown [options]="types" [(ngModel)]="selectedType" (onChange)="selectProject($event)"
+                            optionLabel="name"></p-dropdown>
+                    </div>
+                    <div class="ml-3">
+                        <p-selectButton [options]="stateOptions" [(ngModel)]="value1" optionLabel="label"
+                            optionValue="value"></p-selectButton>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+        <div class="grid img-cards">
+            Test
+        </div>
+    </p-panel>
+
+</div>

@@ -1,0 +1,293 @@
+// @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+$white: #fff;
+$black: #000;
+
+$sunset-600: #ac0826; //added
+$sunset-500: #ff6969;
+$sunset-400: #ffbe40; //added
+$sunset-200: #fff1d6; // added
+$sunset-100: #fff0f0;
+
+$sea-500: #0157ff;
+$sea-400: #3479ff;
+$sea-300: #679aff;
+$sea-200: #99bcff;
+$sea-100: #ccddff;
+
+$mint-500: #18d6b3;
+$mint-400: #46dec2;
+$mint-300: #74e6d1;
+$mint-200: #a3efe1;
+$mint-100: #d1f7f0;
+
+$slate-600: #181c32; // added
+$slate-500: #001d4a; // Added
+$slate-400: #5b5d63; // Added
+$slate-300: #b0b6c3; // added
+$slate-200: #f5f8fa; // Added
+$slate-100: #e4e6ef; // Added
+
+$cloud-600: #d8d8d8; // added
+$cloud-500: #f9fafb; // added
+$cloud-400: #eff4fa; // added
+$cloud-300: #edf0ff; // added
+$cloud-200: #f4f5f7;
+$cloud-100: #fafafb; // added
+
+$indigo-500: #425b78 !default; // added
+$indigo-400: #5e6278 !default; // added
+$indigo-100: #e2e9eb !default; // added
+
+$base-font-color: $slate-500;
+
+// THEME
+$blue: $slate-500 !default; // Added
+$indigo: $indigo-500 !default; // added
+
+$blue-hover: lighten($blue, 7%); // Added
+
+$purple: #6f42c1 !default;
+$pink: #e83e8c !default;
+$red: #dc3545 !default;
+$orange: #fd7e14 !default;
+$yellow: #ffc107 !default;
+$green: #28a745 !default;
+$teal: #20c997 !default;
+$cyan: #17a2b8 !default;
+
+//Core Color Setup
+$primary: $blue !default;
+$secondary: $indigo !default;
+
+$success: $green !default;
+$info: $cyan !default;
+$warning: $yellow !default;
+$danger: $red !default;
+$light: $slate-100 !default;
+$dark: $slate-400 !default;
+
+// Theme Setup
+$theme-colors: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$theme-colors: map-merge(
+  (
+    "primary": $primary,
+    "secondary": $secondary,
+    "success": $success,
+    "info": $info,
+    "warning": $warning,
+    "danger": $danger,
+    "light": $light,
+    "dark": $dark,
+  ),
+  $theme-colors
+);
+
+// Body
+//
+// Settings for the `<body>` element.
+
+$body-bg: #1d222e;
+$body-color: $slate-400;
+
+$image-path: "/assets/images";
+
+// Links
+//
+// Style anchor elements.
+
+$link-color: theme-color("primary") !default;
+$link-decoration: none !default;
+$link-hover-color: darken($link-color, 15%) !default;
+$link-hover-decoration: underline !default;
+// Darken percentage for links with `.text-*` class (e.g. `.text-success`)
+$emphasized-link-hover-darken-percentage: 15% !default;
+$text-muted: $slate-300 !default;
+
+// stylelint-disable
+$spacer: 1rem !default;
+$spacers: () !default;
+$spacers: map-merge(
+  (
+    0: 0,
+    1: (
+      $spacer * 0.25,
+    ),
+    2: (
+      $spacer * 0.5,
+    ),
+    3: $spacer,
+    4: (
+      $spacer * 1.5,
+    ),
+    5: (
+      $spacer * 3,
+    ),
+  ),
+  $spacers
+);
+
+// This variable affects the `.h-*` and `.w-*` classes.
+$sizes: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$sizes: map-merge(
+  (
+    25: 25%,
+    50: 50%,
+    75: 75%,
+    100: 100%,
+    auto: auto,
+  ),
+  $sizes
+);
+
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+);
+
+@include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
+@include _assert-starts-at-zero($grid-breakpoints, "$grid-breakpoints");
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+);
+
+@include _assert-ascending($container-max-widths, "$container-max-widths");
+
+// Grid columns
+//
+// Set the number of columns and specify the width of the gutters.
+
+$grid-columns: 12;
+$grid-gutter-width: 24px;
+
+// Fonts
+//
+// Font, line-height, and color for body text, headings, and more.
+$font-family-poppins: -apple-system, "Poppins", sans-serif, Arial;
+$font-family-base: $font-family-poppins !default;
+
+$font-size-base: 1rem !default; // Assumes the browser default, typically `16px`
+$font-size-lg: $font-size-base * 1.25 !default;
+$font-size-sm: $font-size-base * 0.875 !default;
+
+$font-weight-thin: 100 !default;
+$font-weight-extra-light: 200 !default;
+$font-weight-light: 300 !default;
+$font-weight-regular: 400 !default;
+$font-weight-medium: 500 !default;
+$font-weight-semi-bold: 600 !default;
+$font-weight-bold: 700 !default;
+$font-weight-extra-bold: 800 !default;
+$font-weight-black: 900 !default;
+
+$font-weight-base: $font-weight-regular !default;
+$line-height-base: 1.5 !default;
+
+$h1-font-size: $font-size-base * 2.5 !default;
+$h2-font-size: $font-size-base * 2 !default;
+$h3-font-size: $font-size-base * 1.75 !default;
+$h4-font-size: $font-size-base * 1.5 !default;
+$h5-font-size: $font-size-base * 1.25 !default;
+$h6-font-size: $font-size-base !default;
+
+$headings-margin-bottom: 1rem; //($spacer / 2) !default;
+$headings-font-family: inherit !default;
+$headings-font-weight: 500 !default;
+$headings-line-height: 1.2 !default;
+$headings-color: inherit !default;
+
+// Components
+//
+// Define common padding and border radius sizes and more.
+$line-height-lg: 1.5 !default;
+$line-height-sm: 1 !default;
+
+// Options
+//
+// Quickly modify global styling by enabling or disabling optional features.
+$enable-caret: true !default;
+$enable-rounded: true !default;
+$enable-shadows: false !default;
+$enable-gradients: false !default;
+$enable-transitions: true !default;
+$enable-prefers-reduced-motion-media-query: true !default;
+$enable-hover-media-query: false !default; // Deprecated, no longer affects any compiled CSS
+$enable-grid-classes: true !default;
+$enable-pointer-cursor-for-buttons: true !default;
+$enable-print-styles: true !default;
+$enable-responsive-font-sizes: false !default;
+$enable-validation-icons: true !default;
+$enable-deprecation-messages: true !default;
+
+// Paragraphs
+//
+// Style p element.
+$paragraph-margin-bottom: 1rem !default;
+
+// Tables
+//
+// Customizes the `.table` component with basic values, each used across all table variations.
+$table-cell-padding: 0.75rem !default;
+$table-cell-padding-sm: 0.3rem !default;
+
+$box-shadow-sm: 0 1px 1px rgba($slate-500, 0.1);
+$box-shadow: 0 1px 5px rgba($slate-500, 0.175);
+$box-shadow-lg: 0 4px 10px rgba($slate-500, 0.2);
+
+$border-width: 1px;
+$border-color: $slate-200;
+
+$border-radius: 0.25rem;
+$border-radius-lg: 0.4rem;
+$border-radius-sm: 0.2rem;
+
+$rounded-pill: 50rem;
+
+// Z-index master list
+//
+// Warning: Avoid customizing these values. They're used for a bird's eye view
+// of components dependent on the z-axis and are designed to all work together.
+
+$zindex-dropdown: 1000 !default;
+$zindex-sticky: 1020 !default;
+$zindex-fixed: 1030 !default;
+$zindex-modal-backdrop: 1040 !default;
+$zindex-modal: 1050 !default;
+$zindex-popover: 1060 !default;
+$zindex-tooltip: 1070 !default;
+
+// Utilities
+$displays: none, inline, inline-block, block, table, table-row, table-cell, flex,
+  inline-flex !default;
+$overflows: auto, hidden !default;
+$positions: static, relative, absolute, fixed, sticky !default;
+$user-selects: all, auto, none !default;
+
+// Printing
+$print-page-size: a3 !default;
+$print-body-min-width: map-get($grid-breakpoints, "lg") !default;
+
+$embed-responsive-aspect-ratios: ();
+// stylelint-disable-next-line scss/dollar-variable-default
+$embed-responsive-aspect-ratios: join(
+  ((21 9), (16 9), (4 3), (1 1)),
+  $embed-responsive-aspect-ratios
+);

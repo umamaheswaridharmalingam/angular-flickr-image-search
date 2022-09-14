@@ -1,0 +1,115 @@
+$main-icon-stepper-height: 50px;
+$main-icon-stepper-width: 50px;
+$main-stepper-spacing: 5px;
+
+.mt-stepper {
+  display: flex;
+  padding: 44px 30px;
+  margin: 0;
+}
+
+.mt-stepper-item {
+  display: flex;
+  gap: $main-stepper-spacing;
+  align-items: center;
+
+  .uagc-icon {
+    opacity: 0.3;
+    &.uagc-icon-journal {
+      background-size: 45px;
+      width: 45px;
+      height: 54px;
+    }
+    &.uagc-icon-building {
+      background-size: 54px;
+      width: 55px;
+      height: 63px;
+    }
+    &.uagc-icon-education {
+      background-size: 65px;
+      width: 66px;
+      height: 65px;
+    }
+
+    &.uagc-icon-dollar {
+      background-size: 54px;
+      width: 55px;
+      height: 55px;
+    }
+    &.uagc-icon-flag {
+      background-size: 39px;
+      width: 40px;
+      height: 59px;
+    }
+  }
+
+  &:not(:last-child) {
+    flex: 1;
+
+    &:after {
+      content: "";
+      position: relative;
+      z-index: -1;
+      height: 2px;
+      background-color: $cloud-600;
+      flex: 1;
+      margin-right: 0.5rem;
+    }
+  }
+
+  &.completed {
+    .uagc-icon {
+      opacity: 1;
+    }
+    .mt-stepper-title {
+      color: $slate-600;
+    }
+  }
+
+  &.active {
+    .uagc-icon {
+      opacity: 1;
+    }
+    .mt-stepper-title {
+      color: $sunset-600;
+    }
+  }
+}
+
+.mt-stepper-title {
+  font-size: 17px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: $slate-300;
+}
+
+@include media-breakpoint-down(md) {
+  .mt-stepper {
+    padding: 2px 5px;
+  }
+  .mt-stepper-item {
+    .uagc-icon {
+      display: none;
+    }
+  }
+
+  .mt-stepper-title {
+    font-size: 14px;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .mt-stepper {
+    padding: 3px 5px;
+  }
+  .mt-stepper-item {
+    gap: 2px;
+    .uagc-icon {
+      display: none;
+    }
+  }
+
+  .mt-stepper-title {
+    font-size: 12px;
+  }
+}

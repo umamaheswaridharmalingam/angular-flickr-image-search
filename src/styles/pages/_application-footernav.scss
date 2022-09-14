@@ -1,0 +1,37 @@
+.stepper-count {
+  color: $slate-500;
+  line-height: 2.3;
+  .stepper-current-page {
+    color: $slate-500;
+    font-size: 22px;
+    font-size: $h3-font-size;
+    font-weight: $font-weight-bold;
+  }
+  .stepper-current-total {
+    color: $indigo-500;
+  }
+}
+.application-footer-container {
+  display: flex;
+  padding-top: 15px;
+  .stepper-count {
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 95px;
+    padding: 0 16px;
+  }
+
+  .progress-action-button {
+    flex-grow: 0;
+    flex-shrink: 0;
+    padding: 15px 20px;
+    text-align: right;
+  }
+  .progress-bar-container {
+    flex-grow: 1;
+    padding-top: 29px;
+  }
+  .p-button {
+    min-width: 120px;
+  }
+}

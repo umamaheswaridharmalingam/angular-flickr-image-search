@@ -1,0 +1,17 @@
+.progress-bar-container {
+    flex-grow: 1;
+}
+
+.progress-indicator {
+    width: 100%;
+    background-color: rgba(126, 143, 150, 0.1); //rgba(#7e8f96, 0.1);
+    // opacity: 0.1;
+    height: 12px;
+    border-radius: 30px;
+    .progress-indicator-completed {
+        background-color: $mint-500;
+        height: 12px;
+        border-radius: 30px;
+    }
+
+}

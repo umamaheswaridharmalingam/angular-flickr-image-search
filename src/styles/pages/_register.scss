@@ -1,0 +1,86 @@
+.section-register-title {
+  text-align: center;
+  padding: 50px 20px;
+  //position: absolute;
+  margin-top: 20%;
+  h1 {
+    font-weight: $font-weight-semi-bold;
+    color: $secondary;
+    font-size: 44px;
+  }
+  h3 {
+    margin-top: 45px;
+    font-weight: $font-weight-regular;
+    color: $slate-400;
+    font-size: 24px;
+  }
+}
+
+
+
+.auth-card {
+  margin: 20% auto 0 auto;
+  border: 1px solid #ffffff;
+  border-radius: 6px;
+  box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.14);
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(1px);
+  padding: 20px 30px;
+  background-color: $white;
+  h3 {
+    font-size: $h2-font-size;
+    font-weight: $font-weight-medium;
+    width: 100%;
+    text-align: center;
+    color: $indigo;
+  }
+  .auth-footer {
+    margin-top: 30px;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+  //   .auth-link-password {
+  //     text-align: center;
+  //   }
+
+  //   .auth-link-account {
+  //     text-align: center;
+  //   }
+}
+
+@include media-breakpoint-down(lg) {
+  .section-register-title {
+    margin-top: 10%;
+    h1 {
+      font-size: 34px;
+    }
+
+    h3 {
+      font-size: 22px;
+    }
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .section-register-title {
+    margin-top: 0;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .section-register-title {
+    margin-top: 0;
+    h1 {
+      font-size: 30px;
+    }
+
+    h3 {
+      font-size: 22px;
+    }
+  }
+
+  .auth-card {
+    padding: 20px 20px;
+    width: 90%;
+  }
+}

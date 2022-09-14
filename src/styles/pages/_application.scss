@@ -1,0 +1,156 @@
+//Top
+$application-top-nav-height: 140px;
+$application-top-nav-height-mobile: 50px;
+
+// content
+$application-left-nav-width: 300px;
+
+//Footer
+$application-footer-nav-height: 100px;
+
+.application-main-container {
+  display: flex;
+  .application-left-nav {
+    // border-right: solid 5px gray;
+    // background-color: antiquewhite;
+
+    background-color: $white;
+    width: $application-left-nav-width;
+    border-right: solid 1px $cloud-400;
+    margin-top: $application-top-nav-height;
+    height: calc(
+      #{100vh} - #{$header-height + $application-top-nav-height + $application-footer-nav-height}
+    );
+    position: fixed;
+    left: 0;
+    bottom: $application-footer-nav-height;
+  }
+
+  .application-content {
+    // border: solid 5px green;
+    // background-color: rgb(159, 255, 250);
+
+    margin-left: $application-left-nav-width;
+    margin-top: $application-top-nav-height;
+    margin-bottom: $application-footer-nav-height;
+    padding: 25px;
+    background-color: $cloud-500;
+    width: 100%;
+
+    .application-content-body {
+      border: solid 1px $cloud-400;
+      border-radius: $border-radius-sm;
+      background-color: $white;
+      min-height: calc(
+        100vh - #{$application-top-nav-height + $application-footer-nav-height +
+          160px}
+      );
+    }
+  }
+}
+.application-top-nav {
+  //   border: solid 5px rgb(255, 255, 170);
+  //   background-color: rgb(151, 186, 250);
+
+  background-color: $white;
+  border-bottom: solid 1px $cloud-400;
+  position: fixed;
+  top: $header-height;
+  left: 0;
+  right: 0;
+  height: $application-top-nav-height;
+  width: 100%;
+  z-index: 99;
+}
+
+.application-footer-nav {
+  //   background-color: rgb(253, 170, 226);
+
+  background-color: $white;
+  height: $application-footer-nav-height;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+
+  display: flex;
+  border-top: solid 1px $cloud-400;
+  .application-contact-us {
+    // border-right: solid 5px gray;
+    // background-color: rgb(255, 193, 157);
+
+    background-color: $white;
+    width: $application-left-nav-width;
+    border-right: solid 1px $cloud-400;
+  }
+
+  .application-action-bar {
+    //border: solid 5px rgb(86, 24, 255);
+    // background-color: rgb(255, 193, 157);
+
+    background-color: $white;
+    width: calc(#{100%} - #{$application-left-nav-width});
+  }
+}
+
+.content-body-wrapper {
+  padding: 20px 30px 40px 30px;
+
+  .p-message-custom {
+    padding: 15px;
+    border-width: 0;
+    border-radius: $border-radius;
+    margin-bottom: 1rem;
+    color: $indigo-400;
+
+    &.msg-custom-info {
+      background-color: $indigo-100;
+    }
+
+    &.msg-custom-warning {
+      background-color: $sunset-200;
+    }
+  }
+}
+
+@mixin mobile-application-view() {
+  .application-main-container {
+    .application-left-nav {
+      display: none;
+      height: 100vh;
+    }
+
+    .application-content {
+      padding: 15px;
+      margin-left: 0;
+      margin-top: $application-top-nav-height-mobile;
+      margin-bottom: 0;
+    }
+  }
+
+  .application-top-nav {
+    height: $application-top-nav-height-mobile;
+    top: $header-height-mobile;
+  }
+  .application-footer-nav {
+    position: relative;
+    .application-contact-us {
+      display: none;
+    }
+    .application-action-bar {
+      width: 100%;
+    }
+  }
+}
+
+@include media-breakpoint-down(lg) {
+}
+
+@include media-breakpoint-down(md) {
+  @include mobile-application-view();
+}
+
+@include media-breakpoint-down(sm) {
+  @include mobile-application-view();
+}

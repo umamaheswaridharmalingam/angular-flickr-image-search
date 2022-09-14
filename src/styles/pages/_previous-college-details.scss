@@ -1,0 +1,64 @@
+.college-detail-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.college-detail-card {
+  background-color: $slate-200;
+  border: solid 1px $slate-100;
+  border-radius: $border-radius;
+  margin-right: 30px;
+  padding: 15px;
+  width: 250px;
+  margin-bottom: 25px;
+  min-height: 320px;
+  cursor: pointer;
+  .cd-title {
+    font-size: $h4-font-size;
+    font-weight: $font-weight-medium;
+  }
+  .cd-text {
+    font-weight: $font-weight-medium;
+    // stle
+  }
+  .cd-credit-earned {
+    // stle
+  }
+  .c-tag {
+    font-weight: $font-weight-medium;
+    background-color: $sunset-400;
+    border-radius: $border-radius;
+    padding: 2px 5px;
+    margin-left: 5px;
+  }
+  &:hover {
+    box-shadow: $box-shadow;
+  }
+  .p-delete.p-button-rounded {
+    width: 2rem !important;
+    height: 2rem !important;
+    position: absolute;
+    margin-top: -26px;
+    margin-left: 210px;
+  }
+
+  &.add-new {
+    text-align: center;
+    padding-top: 85px;
+    border: dashed 2px $slate-500;
+    .pi {
+      display: block;
+      font-size: $h1-font-size;
+      font-weight: $font-weight-extra-light;
+      margin-bottom: 15px;
+    }
+    .c-add-title {
+      font-weight: $font-weight-extra-light;
+      display: block;
+      font-size: $h3-font-size;
+    }
+    &:hover {
+      box-shadow: $box-shadow-lg;
+    }
+  }
+}

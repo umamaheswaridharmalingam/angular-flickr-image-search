@@ -1,0 +1,40 @@
+/* You can add global styles to this file, and also import other style files */
+@import "functions";
+@import "variable";
+@import "mixins";
+@import "utilities";
+
+@import "global/reboot";
+@import "global/base";
+
+// Layout
+@import "layout/header";
+@import "layout/footer";
+@import "layout/body";
+
+// component
+@import "components/document";
+@import "components/progressbar";
+@import "components/icon";
+//@import "components/ribbon";
+@import "components/form";
+@import "components/slider-panel";
+@import "components/card-button";
+
+// Pages
+@import "pages/register";
+@import "pages/login";
+@import "pages/dashboard";
+@import "pages/application";
+@import "pages/application-leftnav";
+@import "pages/application-footernav";
+@import "pages/application-topnav";
+@import "pages/application-contactus";
+@import "pages/previous-college-details";
+@import "pages/review";
+@import "pages/searchfilter";
+
+@import "pages/notfound";
+
+// PrimeNG override
+@import "global/override";

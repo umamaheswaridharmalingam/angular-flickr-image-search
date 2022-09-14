@@ -1,0 +1,25 @@
+.app-body {
+  margin-top: $header-height;
+  min-height: calc(#{100vh} - (#{$header-height} + #{$header-height} + 10px));
+  background-color: $white;
+  padding: 10px;
+}
+
+@include media-breakpoint-down(lg) {
+  .app-body {
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .app-body {
+    margin-top: $header-height-mobile;
+    min-height: calc(#{100vh} - #{$header-height-mobile});
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .app-body {
+    margin-top: $header-height-mobile;
+    min-height: calc(#{100vh} - #{$header-height-mobile});
+  }
+}

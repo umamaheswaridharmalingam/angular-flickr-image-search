@@ -1,0 +1,49 @@
+.p-card-block {
+  cursor: pointer;
+  border-radius: $border-radius;
+  .card-title {
+    font-size: $h3-font-size;
+    font-weight: $font-weight-semi-bold;
+    color: $slate-600;
+  }
+  .cb-label {
+    color: $indigo-500;
+  }
+  .cb-text {
+    font-size: $h4-font-size;
+    font-weight: $font-weight-light;
+  }
+  .cb-edit-btn {
+    display: none;
+    position: absolute;
+    border: solid 1px $slate-300;
+    padding: 2px 6px;
+    border-radius: $border-radius;
+    font-size: 16px;
+    font-weight: $font-weight-light;
+    margin-top: 7px;
+    margin-left: 10px;
+    &:before {
+      content: "\e942";
+      font-family: "primeicons";
+      speak: none;
+      font-style: normal;
+      font-weight: normal;
+      font-feature-settings: normal;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1;
+      display: inline-block;
+      -webkit-font-smoothing: antialiased;
+      padding: 4px 6px 4px 4px;
+      font-size: 14px;
+    }
+  }
+  &:hover {
+    box-shadow: $box-shadow-lg;
+    background-color: $slate-200;
+    .cb-edit-btn {
+      display: inline-block;
+    }
+  }
+}
