@@ -191,3 +191,84 @@
     margin-top: 15px;
   }
 }
+
+.img-card {
+  padding: 5px;
+  margin: 5px;
+  width: 150px;
+  height: 150px;
+  background-size: cover;
+}
+
+.search-orientation-picker-view {
+  flex: 1 1 135px;
+
+  .orientation-list {
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+
+    .orientation-button {
+      cursor: pointer;
+      margin-right: 5px;
+
+      // landscape
+      &.landscape {
+        background: url(/assets/images/icons-87310c47.png) -115px -407px
+          no-repeat;
+        height: 24px;
+        width: 34px;
+
+        &.checked {
+          background: url(/assets/images/icons-87310c47.png) -150px -407px
+            no-repeat;
+          height: 24px;
+          width: 34px;
+        }
+      }
+
+      // portrait
+      &.portrait {
+        background: url(/assets/images/icons-87310c47.png) -405px -283px
+          no-repeat;
+        height: 33px;
+        width: 24px;
+
+        &.checked {
+          background: url(/assets/images/icons-87310c47.png) -471px 0 no-repeat;
+          height: 33px;
+          width: 24px;
+        }
+      }
+
+      // square
+      &.square {
+        background: url(/assets/images/icons-87310c47.png) -228px -448px
+          no-repeat;
+        height: 26px;
+        width: 26px;
+
+        &.checked {
+          background: url(/assets/images/icons-87310c47.png) -255px -448px
+            no-repeat;
+          height: 26px;
+          width: 26px;
+        }
+      }
+
+      // panorama
+      &.panorama {
+        background: url(/assets/images/icons-87310c47.png) -217px -407px
+          no-repeat;
+        height: 18px;
+        width: 36px;
+        &.checked {
+          background: url(/assets/images/icons-87310c47.png) -254px -407px
+            no-repeat;
+          height: 18px;
+          width: 36px;
+        }
+      }
+    }
+  }
+}

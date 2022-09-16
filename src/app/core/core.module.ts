@@ -16,6 +16,9 @@ import { DropdownModule } from 'primeng/dropdown';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
+import { DataViewModule } from 'primeng/dataview';
+import { CalendarModule } from 'primeng/calendar';
+import { MultiSelectModule } from 'primeng/multiselect';
 
 @NgModule({
   declarations: [CoreComponent, PageNotFoundComponent, ImageSearchComponent],
@@ -33,6 +36,10 @@ import { InputTextModule } from 'primeng/inputtext';
     CardModule,
     ButtonModule,
     InputTextModule,
+    DataViewModule,
+    CalendarModule,
+
+    MultiSelectModule,
   ],
 })
 export class CoreModule {}

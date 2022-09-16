@@ -22,12 +22,10 @@ import { SidebarModule } from 'primeng/sidebar';
 import { AvatarModule } from 'primeng/avatar';
 import { TieredMenuModule } from 'primeng/tieredmenu';
 import { AccordionModule } from 'primeng/accordion';
+import { SearchService } from './services/search.service';
 
 @NgModule({
-  declarations: [
-    HeaderComponent,
-    FooterComponent
-  ],
+  declarations: [HeaderComponent, FooterComponent],
   imports: [
     CommonModule,
     MenubarModule,
@@ -48,11 +46,9 @@ import { AccordionModule } from 'primeng/accordion';
     SidebarModule,
     AvatarModule,
     TieredMenuModule,
-    AccordionModule
+    AccordionModule,
   ],
-  exports: [
-    HeaderComponent,
-    FooterComponent
-  ]
+  exports: [HeaderComponent, FooterComponent],
+  providers: [SearchService],
 })
-export class SharedModule { }
+export class SharedModule {}

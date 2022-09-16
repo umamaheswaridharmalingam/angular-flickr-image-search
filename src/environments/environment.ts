@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  flickerApiUrl: 'https://www.flickr.com/services'
+  flickerApiUrl: 'https://api.flickr.com/services/rest/',
 };
 
 /*
