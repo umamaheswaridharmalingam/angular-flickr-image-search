@@ -23,6 +23,7 @@
     <ng-template pTemplate="item" let-photo>
         <img [src]="'//live.staticflickr.com/' + photo.server + '/' + photo.id + '_' + photo.secret + '_b.jpg'"
             style="width: 100%; display: block;" />
+        <!-- <div>by {{photo.ownername}}</div> -->
     </ng-template>
     <!-- <ng-template pTemplate="thumbnail" let-photo>
         <div class="grid grid-nogutter justify-content-center">

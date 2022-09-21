@@ -9,6 +9,7 @@
   width: 100%;
   //padding: 0px 28px;
   min-height: 100vh;
+  padding: 10px;
 
   .collection-content {
     width: 100%;
@@ -199,6 +200,8 @@
   height: 150px;
   background-size: cover;
   cursor: pointer;
+  border-radius: 3px;
+  box-shadow: 0 0 5px 1px #00000024;
   &:hover {
     opacity: 0.5;
     background-color: $slate-500;
@@ -216,7 +219,7 @@
     .orientation-button {
       cursor: pointer;
       margin-right: 5px;
-
+      box-shadow: 0 0 5px 1px #00000024;
       // landscape
       &.landscape {
         background: url(/assets/images/icons-87310c47.png) -115px -407px
@@ -287,6 +290,8 @@
     position: relative;
     width: 25px;
     margin: 0.4rem !important;
+    box-shadow: 0 0 5px 1px #00000024;
+
     &.checked:after {
       background: url(/assets/images/icons-87310c47.png) -527px -66px no-repeat;
       content: "";

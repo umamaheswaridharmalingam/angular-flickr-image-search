@@ -26,6 +26,8 @@ import { CoreService } from './core.service';
 import { TooltipModule } from 'primeng/tooltip';
 import { BlockUIModule } from 'primeng/blockui';
 import { GalleriaModule } from 'primeng/galleria';
+import { ProgressBarModule } from 'primeng/progressbar';
+
 @NgModule({
   declarations: [
     CoreComponent,
@@ -55,6 +57,7 @@ import { GalleriaModule } from 'primeng/galleria';
     TooltipModule,
     BlockUIModule,
     GalleriaModule,
+    ProgressBarModule,
   ],
   providers: [CoreService],
 })

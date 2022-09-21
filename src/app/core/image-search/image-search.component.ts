@@ -82,7 +82,7 @@ export class ImageSearchComponent implements OnInit, OnDestroy {
         this.isLoading = false;
         this.coreService.setIsLoading(false);
         this.photos = result.photos;
-        console.log('result', result);
+        //console.log('result', result);
       });
   }
 

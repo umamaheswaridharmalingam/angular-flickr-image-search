@@ -624,3 +624,19 @@
   border-bottom-right-radius: 6px;
   border-bottom-left-radius: 6px;
 }
+
+.image-collection-container,
+.search-filter-content {
+  .p-component-overlay {
+    background-color: rgb(0 0 0 / 0%) !important;
+  }
+}
+
+.app-body {
+  p-progressbar {
+    position: absolute;
+    z-index: 1000;
+    top: 60px;
+    width: 100%;
+  }
+}
