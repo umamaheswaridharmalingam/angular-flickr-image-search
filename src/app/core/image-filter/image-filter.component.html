@@ -1,4 +1,4 @@
-<div class="search-filter-content">
+<div class="search-filter-content" #pnl>
     <p-accordion [multiple]="true">
         <p-accordionTab header="Orientation" [selected]="true">
             <div class="view search-orientation-picker-view">
@@ -10,6 +10,15 @@
                 </div>
             </div>
         </p-accordionTab>
+        <p-accordionTab header="Color" [selected]="true">
+            <div class="flex align-items-stretch flex-wrap color-swatch">
+                <div *ngFor="let colorSwatch of colorSwatchs" tabindex="0" role="button"
+                    [style.backgroundColor]="colorSwatch.colorCode"
+                    [ngClass]="{'color-swatch-border' : colorSwatch.color === 'c', 'dark' : colorSwatch.isLightColor, 'checked': colorSwatch.isSelected}"
+                    [attr.aria-label]="colorSwatch.label" class="color-swatch-item border-round"
+                    [pTooltip]="colorSwatch.label" tooltipPosition="top" (click)="selectSwatch(colorSwatch)"></div>
+            </div>
+        </p-accordionTab>
         <p-accordionTab header="Content Type" [selected]="true">
             <div *ngFor="let imgType of imageContentTypes" class="field-checkbox">
                 <p-checkbox name="group2" [value]="imgType" [(ngModel)]="selectedImageContentTypes"
@@ -17,12 +26,12 @@
                 <label [for]="imgType.key">{{ imgType.label }}</label>
             </div>
         </p-accordionTab>
-        <p-accordionTab header="Search in" [selected]="true">
+        <p-accordionTab header="Search in">
             <p-selectButton [options]="searchInOptions" [(ngModel)]="selectedSearchInOptions" optionLabel="name"
                 optionValue="value" (onChange)="filterEmit()">
             </p-selectButton>
         </p-accordionTab>
-        <p-accordionTab header="Date Taken" [selected]="true">
+        <p-accordionTab header="Date Taken">
             <div class="field">
                 <label for="firstname1">From</label>
                 <p-calendar [(ngModel)]="fromDate" appendTo="body" [maxDate]="maxDateValue" [showIcon]="false"
@@ -40,8 +49,7 @@
                 </p-calendar>
             </div>
         </p-accordionTab>
-        <p-accordionTab header="Color" [selected]="true">
-            Content 3
-        </p-accordionTab>
+
     </p-accordion>
 </div>
+<p-blockUI [blocked]="blockedDocument"></p-blockUI>

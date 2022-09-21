@@ -23,7 +23,9 @@ import { ImageFilterComponent } from './image-filter/image-filter.component';
 import { AccordionModule } from 'primeng/accordion';
 import { CheckboxModule } from 'primeng/checkbox';
 import { CoreService } from './core.service';
-
+import { TooltipModule } from 'primeng/tooltip';
+import { BlockUIModule } from 'primeng/blockui';
+import { GalleriaModule } from 'primeng/galleria';
 @NgModule({
   declarations: [
     CoreComponent,
@@ -50,6 +52,9 @@ import { CoreService } from './core.service';
     MultiSelectModule,
     AccordionModule,
     CheckboxModule,
+    TooltipModule,
+    BlockUIModule,
+    GalleriaModule,
   ],
   providers: [CoreService],
 })

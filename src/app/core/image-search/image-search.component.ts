@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { SearchService } from 'src/app/shared/services/search.service';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -16,16 +16,31 @@ import { CoreService } from '../core.service';
   selector: 'app-image-search',
   templateUrl: './image-search.component.html',
 })
-export class ImageSearchComponent implements OnInit {
+export class ImageSearchComponent implements OnInit, OnDestroy {
   protected destroyActions = new Subject<boolean>();
 
   photos = new Photos();
   isLoading = false;
   imagesPerPage = 50;
   pageNumber = 1;
+  activeIndex = 0;
   searchText!: string;
   searchFilterModel = new SearchFilterModel();
-
+  responsiveOptions: any[] = [
+    {
+      breakpoint: '1024px',
+      numVisible: 5,
+    },
+    {
+      breakpoint: '768px',
+      numVisible: 3,
+    },
+    {
+      breakpoint: '560px',
+      numVisible: 1,
+    },
+  ];
+  displayPreview = false;
   constructor(
     public searchService: SearchService,
     private coreService: CoreService
@@ -48,8 +63,8 @@ export class ImageSearchComponent implements OnInit {
   }
 
   search() {
-    console.log('search', this.searchFilterModel);
     this.isLoading = true;
+    this.coreService.setIsLoading(true);
     this.searchService
       .searchImage(
         this.searchText,
@@ -59,20 +74,26 @@ export class ImageSearchComponent implements OnInit {
         this.searchFilterModel.searchInText,
         this.searchFilterModel.fromDate,
         this.searchFilterModel.toDate,
-        this.searchFilterModel.contentType
+        this.searchFilterModel.contentType,
+        this.searchFilterModel.colorCode
       )
       .pipe(takeUntil(this.destroyActions))
       .subscribe((result: PhotosRootModel) => {
         this.isLoading = false;
-        //console.log('result', result);
+        this.coreService.setIsLoading(false);
         this.photos = result.photos;
-        //this.photoList = result.photos.photo;
+        console.log('result', result);
       });
   }
 
   loadNext(event: any) {
     this.pageNumber = event.first / this.imagesPerPage + 1;
     this.search();
+  }
+
+  previewImage(photo: Photo, index: number) {
+    this.displayPreview = true;
+    this.activeIndex = index;
   }
 
   public ngOnDestroy() {

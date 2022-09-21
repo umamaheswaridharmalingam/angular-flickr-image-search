@@ -198,6 +198,11 @@
   width: 150px;
   height: 150px;
   background-size: cover;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.5;
+    background-color: $slate-500;
+  }
 }
 
 .search-orientation-picker-view {
@@ -270,5 +275,34 @@
         }
       }
     }
+  }
+}
+
+.color-swatch {
+  .color-swatch-item {
+    border-radius: 3px;
+    cursor: pointer;
+    display: inline-block;
+    height: 25px;
+    position: relative;
+    width: 25px;
+    margin: 0.4rem !important;
+    &.checked:after {
+      background: url(/assets/images/icons-87310c47.png) -527px -66px no-repeat;
+      content: "";
+      height: 9px;
+      left: 7px;
+      position: absolute;
+      top: 7px;
+      width: 10px;
+    }
+    &.dark.checked:after {
+      background: url(/assets/images/icons-87310c47.png) -542px -513px no-repeat;
+      height: 9px;
+      width: 10px;
+    }
+  }
+  .color-swatch-border {
+    border: solid 1px $slate-300;
   }
 }

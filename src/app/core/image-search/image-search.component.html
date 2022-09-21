@@ -5,94 +5,28 @@
     <div class="image-collection-container">
         <p-dataView #dv [value]="photos.photo" [lazy]="true" [totalRecords]="photos.total" [loading]="isLoading"
             (onLazyLoad)="loadNext($event)" [paginator]="true" [rows]="photos.perpage" layout="grid">
-            <!-- <ng-template pTemplate="header">
-
-                <div class="grid">
-
-                    <div class="col-12 md:col-6 lg:col-3">
-
-                    </div>
-
-
-                    <div class="col-12 md:col-6 lg:col-3">
-                        <div class="flex justify-content-center flex-wrap">
-                            <div>
-                                <p class="option-header" tabindex="0" aria-hidden="false">Date Taken From</p>
-                                <p-calendar [(ngModel)]="fromDate" [showIcon]="false" [readonlyInput]="true"
-                                    [showButtonBar]="true" inputId="fromDate" (onSelect)="dateTakeChange($event)">
-                                </p-calendar>
-                            </div>
-
-                            <div>
-                                <p class="option-header" tabindex="0" aria-hidden="false">Date Taken To</p>
-                               
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 md:col-6 lg:col-3">
-
-                    </div>
-
-                    <div class="col-12 md:col-6 lg:col-3">
-                        <p class="option-header" tabindex="0" aria-hidden="false">Content</p>
-                        <p-multiSelect [options]="imageContentTypes" [(ngModel)]="selectedImageContentTypes"
-                            [filter]="false" [showClear]="false" [showHeader]="false" optionLabel="label"
-                            (onChange)="imageContentTypeChange($event)">
-                        </p-multiSelect>
-                    </div>
-
-                </div>
-            </ng-template>
-             -->
             <ng-template let-photo pTemplate="listItem">
-                <span>List</span>
-                <!-- <div class="col-12">
-                <div class="product-list-item">
-                    <img [src]="'assets/showcase/images/demo/product/' + product.image" [alt]="product.name"/>
-                    <div class="product-list-detail">
-                        <div class="product-name">{{product.name}}</div>
-                        <div class="product-description">{{product.description}}</div>
-                        <p-rating [ngModel]="product.rating" [readonly]="true" [cancel]="false"></p-rating>
-                        <i class="pi pi-tag product-category-icon"></i><span class="product-category">{{product.category}}</span>
-                    </div>
-                    <div class="product-list-action">
-                        <span class="product-price">${{product.price}}</span>
-                        <p-button icon="pi pi-shopping-cart" label="Add to Cart" [disabled]="product.inventoryStatus === 'OUTOFSTOCK'"></p-button>
-                        <span [class]="'product-badge status-' + product.inventoryStatus.toLowerCase()">{{product.inventoryStatus}}</span>
-                    </div>
-                </div>
-            </div> -->
+                <span>List Under Development</span>
             </ng-template>
-            <ng-template let-photo pTemplate="gridItem">
-                <div class="img-card"
+            <ng-template let-photo pTemplate="gridItem" let-i="rowIndex">
+                <div class="img-card" tabindex="0" role="button" (click)="previewImage(photo, i)"
                     style="background-image:url('//live.staticflickr.com/{{photo.server}}/{{photo.id}}_{{photo.secret}}_n.jpg');">
-                    <!-- <span>{{photo.id}}</span> -->
-                    <!-- <img loading="lazy" height="200px"
-                    src="//live.staticflickr.com/{{photo.server}}/{{photo.id}}_{{photo.secret}}_n.jpg" /> -->
                 </div>
-                <!-- <div class="col-12 md:col-4">
-                <div class="product-grid-item card">
-                    <div class="product-grid-item-top">
-                        <div>
-                            <i class="pi pi-tag product-category-icon"></i>
-                            <span class="product-category">{{product.category}}</span>
-                        </div>
-                        <span [class]="'product-badge status-' + product.inventoryStatus.toLowerCase()">{{product.inventoryStatus}}</span>
-                    </div>
-                    <div class="product-grid-item-content">
-                        <img [src]="'assets/showcase/images/demo/product/' + product.image" [alt]="product.name"/>
-                        <div class="product-name">{{product.name}}</div>
-                        <div class="product-description">{{product.description}}</div>
-                        <p-rating [ngModel]="product.rating" [readonly]="true" [cancel]="false"></p-rating>
-                    </div>
-                    <div class="product-grid-item-bottom">
-                        <span class="product-price">${{product.price}}</span>
-                        <p-button icon="pi pi-shopping-cart" [disabled]="product.inventoryStatus === 'OUTOFSTOCK'"></p-button>
-                    </div>
-                </div>
-            </div> -->
             </ng-template>
         </p-dataView>
     </div>
 </div>
+
+<p-galleria [value]="photos.photo" [(visible)]="displayPreview" [containerStyle]="{'max-width': '850px'}"
+    [(activeIndex)]="activeIndex" [numVisible]="10" [circular]="true" [fullScreen]="true" [showItemNavigators]="true"
+    [showThumbnails]="false" [baseZIndex]="100000">
+    <ng-template pTemplate="item" let-photo>
+        <img [src]="'//live.staticflickr.com/' + photo.server + '/' + photo.id + '_' + photo.secret + '_b.jpg'"
+            style="width: 100%; display: block;" />
+    </ng-template>
+    <!-- <ng-template pTemplate="thumbnail" let-photo>
+        <div class="grid grid-nogutter justify-content-center">
+            <img [src]="photo.smallImageUrl" style="display: block;" />
+        </div>
+    </ng-template> -->
+</p-galleria>

@@ -22,7 +22,7 @@ export class SearchService extends BaseRestApiService {
     fromDate: Date,
     toDate: Date,
     imageContentTypes: string,
-    colorCode?: number,
+    colorCode: string,
     dimensionMode?: number
   ): Observable<PhotosRootModel> {
     let urlParam: any = {};
@@ -60,13 +60,15 @@ export class SearchService extends BaseRestApiService {
     if (dimensionMode) {
       urlParam.dimension_search_mode = dimensionMode;
     }
-    // if(colorCode) {
-    //   urlParam.color_codes = colorCode;
-    // }
+
+    if (colorCode) {
+      urlParam.color_codes = colorCode;
+    }
 
     urlParam.sort = 'relevance';
     urlParam.parse_tags = 1;
     urlParam.content_type = 7;
+    urlParam.extras = 'owner_name,realname,description,title';
     return this.get<PhotosRootModel>(
       `${environment.flickerApiUrl}`,
       urlParam,
