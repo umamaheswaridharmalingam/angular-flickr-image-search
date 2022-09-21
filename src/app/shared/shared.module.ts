@@ -23,11 +23,14 @@ import { AvatarModule } from 'primeng/avatar';
 import { TieredMenuModule } from 'primeng/tieredmenu';
 import { AccordionModule } from 'primeng/accordion';
 import { SearchService } from './services/search.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [HeaderComponent, FooterComponent],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
+    FormsModule,
     MenubarModule,
     InputTextModule,
     ButtonModule,

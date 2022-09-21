@@ -1,20 +1,21 @@
 <header class="app-header">
-
-
-    <div class="flex overflow-hidden">
-        <div class="flex align-items-center justify-content-center">
-            <div class="logo">
-                <img src="/assets/images/ud-logo.png" height="40" class="p-mr-2" />
+    <form [formGroup]="searchForm" autocomplete="off" (ngSubmit)="onSubmit()">
+        <div class="flex overflow-hidden">
+            <div class="flex align-items-center justify-content-center">
+                <div class="logo">
+                    <img src="/assets/images/ud-logo.png" height="40" class="p-mr-2" />
+                </div>
+                <div class="logo-title-container">
+                    <span class="logo-title">Flickr Image Search</span>
+                </div>
             </div>
-            <div class="logo-title-container">
-                <span class="logo-title">Flickr Image Search</span>
+            <div class="flex-grow-1 flex align-items-center justify-content-center">
+                <span class="p-input-icon-left search-element">
+                    <i class="pi pi-search"></i>
+                    <input type="text" pInputText placeholder="Search" name="search" autocomplete="off"
+                        formControlName="searchText" autocorrect="off" autofocus="true" id="search-text" />
+                </span>
             </div>
         </div>
-        <div class="flex-grow-1 flex align-items-center justify-content-center">
-            <span class="p-input-icon-left search-element">
-                <i class="pi pi-search"></i>
-                <input type="text" pInputText placeholder="Search" />
-            </span>
-        </div>
-    </div>
+    </form>
 </header>

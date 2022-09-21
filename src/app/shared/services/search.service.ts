@@ -21,7 +21,7 @@ export class SearchService extends BaseRestApiService {
     searchInText: boolean = true,
     fromDate: Date,
     toDate: Date,
-    imageContentTypes?: string,
+    imageContentTypes: string,
     colorCode?: number,
     dimensionMode?: number
   ): Observable<PhotosRootModel> {

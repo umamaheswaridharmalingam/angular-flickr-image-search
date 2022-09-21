@@ -1,0 +1,47 @@
+<div class="search-filter-content">
+    <p-accordion [multiple]="true">
+        <p-accordionTab header="Orientation" [selected]="true">
+            <div class="view search-orientation-picker-view">
+                <div class="orientation-list">
+                    <div *ngFor="let enumOrientation of orientation | keyvalue"
+                        class="orientation-button {{ enumOrientation.value }}"
+                        [ngClass]="{ checked: selectedOrientation(enumOrientation.value) }" tabindex="0"
+                        aria-hidden="false" (click)="selectOrientation(enumOrientation.value)"></div>
+                </div>
+            </div>
+        </p-accordionTab>
+        <p-accordionTab header="Content Type" [selected]="true">
+            <div *ngFor="let imgType of imageContentTypes" class="field-checkbox">
+                <p-checkbox name="group2" [value]="imgType" [(ngModel)]="selectedImageContentTypes"
+                    [inputId]="imgType.key" (onChange)="filterEmit()"></p-checkbox>
+                <label [for]="imgType.key">{{ imgType.label }}</label>
+            </div>
+        </p-accordionTab>
+        <p-accordionTab header="Search in" [selected]="true">
+            <p-selectButton [options]="searchInOptions" [(ngModel)]="selectedSearchInOptions" optionLabel="name"
+                optionValue="value" (onChange)="filterEmit()">
+            </p-selectButton>
+        </p-accordionTab>
+        <p-accordionTab header="Date Taken" [selected]="true">
+            <div class="field">
+                <label for="firstname1">From</label>
+                <p-calendar [(ngModel)]="fromDate" appendTo="body" [maxDate]="maxDateValue" [showIcon]="false"
+                    [readonlyInput]="true" [showButtonBar]="true"
+                    styleClass="text-base text-color surface-overlay border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                    inputId="fromDate" (onSelect)="filterEmit()">
+                </p-calendar>
+            </div>
+            <div class="field">
+                <label for="lastname1">To</label>
+                <p-calendar [(ngModel)]="toDate" appendTo="body" [maxDate]="maxDateValue" [showIcon]="false"
+                    [readonlyInput]="true" [showButtonBar]="true"
+                    styleClass="text-base text-color surface-overlay border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                    inputId="toDate" (onSelect)="filterEmit()">
+                </p-calendar>
+            </div>
+        </p-accordionTab>
+        <p-accordionTab header="Color" [selected]="true">
+            Content 3
+        </p-accordionTab>
+    </p-accordion>
+</div>

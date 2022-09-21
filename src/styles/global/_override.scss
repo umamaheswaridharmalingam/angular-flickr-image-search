@@ -295,53 +295,53 @@
 }
 
 // Button
-.p-button {
-  -webkit-border-radius: $border-radius !important;
-  border-radius: $border-radius;
-  padding: 0.4rem 1rem;
+// .p-button {
+//   -webkit-border-radius: $border-radius !important;
+//   border-radius: $border-radius;
+//   padding: 0.4rem 1rem;
 
-  background: $slate-600;
-  border-color: $slate-600;
+//   background: $slate-600;
+//   border-color: $slate-600;
 
-  // -webkit-border-radius: 4px !important;
-  // background-clip: padding-box !important;
-  // color: $midday !important;
-  // border: 0 !important;
-  // text-align: center !important;
-  // cursor: pointer !important;
+//   // -webkit-border-radius: 4px !important;
+//   // background-clip: padding-box !important;
+//   // color: $midday !important;
+//   // border: 0 !important;
+//   // text-align: center !important;
+//   // cursor: pointer !important;
 
-  &.large-button {
-    font-size: $font-size-base * 1.1;
-    padding: 16px 20px !important;
-  }
-  &:enabled:hover {
-    background: lighten($slate-600, 10%) !important;
-  }
-  &:enabled:active {
-    background: lighten($slate-600, 10%) !important;
-  }
+//   &.large-button {
+//     font-size: $font-size-base * 1.1;
+//     padding: 16px 20px !important;
+//   }
+//   &:enabled:hover {
+//     background: lighten($slate-600, 10%) !important;
+//   }
+//   &:enabled:active {
+//     background: lighten($slate-600, 10%) !important;
+//   }
 
-  &.p-button-secondary.p-button-outlined {
-    background-color: transparent !important;
-    border-color: $slate-600;
-    color: $slate-600;
-    &:enabled:hover {
-      border-color: lighten($slate-600, 10%) !important;
-      background-color: transparent !important;
-    }
-    &:enabled:active {
-      border-color: lighten($slate-600, 10%) !important;
-      background-color: transparent !important;
-    }
-    &:disabled {
-      .p-button-icon,
-      .p-button-label {
-        color: $slate-100 !important;
-      }
-      border-color: $slate-300 !important;
-    }
-  }
-}
+//   &.p-button-secondary.p-button-outlined {
+//     background-color: transparent !important;
+//     border-color: $slate-600;
+//     color: $slate-600;
+//     &:enabled:hover {
+//       border-color: lighten($slate-600, 10%) !important;
+//       background-color: transparent !important;
+//     }
+//     &:enabled:active {
+//       border-color: lighten($slate-600, 10%) !important;
+//       background-color: transparent !important;
+//     }
+//     &:disabled {
+//       .p-button-icon,
+//       .p-button-label {
+//         color: $slate-100 !important;
+//       }
+//       border-color: $slate-300 !important;
+//     }
+//   }
+// }
 
 // p-card
 .p-card {
@@ -505,26 +505,26 @@
   .p-checkbox-box {
     width: 24px;
     height: 24px;
-    border: solid 1px $slate-500;
-    &.p-highlight {
-      border-color: $slate-500;
-      background: $slate-500;
-    }
-    &:hover {
-      border: solid 2px $slate-500 !important;
-    }
+    // border: solid 1px $slate-500;
+    // &.p-highlight {
+    //   border-color: $slate-500;
+    //   background: $slate-500;
+    // }
+    // &:hover {
+    //   border: solid 2px $slate-500 !important;
+    // }
   }
-  &:not(.p-checkbox-disabled) .p-checkbox-box.p-focus,
-  &:hover {
-    border-color: $slate-500;
-    box-shadow: 0 0px 2px 0.2rem $cloud-200;
-  }
-  &:not(.p-checkbox-disabled) .p-checkbox-box.p-highlight:hover {
-    background: $slate-500;
-  }
-  .p-checkbox:not(.p-checkbox-disabled) .p-checkbox-box:hover {
-    border: solid 2px $slate-500;
-  }
+  // &:not(.p-checkbox-disabled) .p-checkbox-box.p-focus,
+  // &:hover {
+  //   border-color: $slate-500;
+  //   box-shadow: 0 0px 2px 0.2rem $cloud-200;
+  // }
+  // &:not(.p-checkbox-disabled) .p-checkbox-box.p-highlight:hover {
+  //   background: $slate-500;
+  // }
+  // .p-checkbox:not(.p-checkbox-disabled) .p-checkbox-box:hover {
+  //   border: solid 2px $slate-500;
+  // }
 }
 
 // Split Button
@@ -615,8 +615,6 @@
   }
 }
 
-
-
 .p-panel .p-panel-header {
   border-top-right-radius: 6px;
   border-top-left-radius: 6px;
@@ -624,5 +622,5 @@
 
 .p-panel .p-panel-content {
   border-bottom-right-radius: 6px;
-    border-bottom-left-radius: 6px;
+  border-bottom-left-radius: 6px;
 }

@@ -19,9 +19,18 @@ import { InputTextModule } from 'primeng/inputtext';
 import { DataViewModule } from 'primeng/dataview';
 import { CalendarModule } from 'primeng/calendar';
 import { MultiSelectModule } from 'primeng/multiselect';
+import { ImageFilterComponent } from './image-filter/image-filter.component';
+import { AccordionModule } from 'primeng/accordion';
+import { CheckboxModule } from 'primeng/checkbox';
+import { CoreService } from './core.service';
 
 @NgModule({
-  declarations: [CoreComponent, PageNotFoundComponent, ImageSearchComponent],
+  declarations: [
+    CoreComponent,
+    PageNotFoundComponent,
+    ImageSearchComponent,
+    ImageFilterComponent,
+  ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
@@ -38,8 +47,10 @@ import { MultiSelectModule } from 'primeng/multiselect';
     InputTextModule,
     DataViewModule,
     CalendarModule,
-
     MultiSelectModule,
+    AccordionModule,
+    CheckboxModule,
   ],
+  providers: [CoreService],
 })
 export class CoreModule {}

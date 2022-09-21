@@ -1,86 +1,53 @@
-<div class="image-collection-container">
-    <!-- <p-panel>
-        <ng-template pTemplate="icons">
-            <div class="flex wrap-on-mobile">
+<div class="display-main-container">
+    <div class="search-filter-container">
+        <app-image-filter (onSelect)="filter($event)"></app-image-filter>
+    </div>
+    <div class="image-collection-container">
+        <p-dataView #dv [value]="photos.photo" [lazy]="true" [totalRecords]="photos.total" [loading]="isLoading"
+            (onLazyLoad)="loadNext($event)" [paginator]="true" [rows]="photos.perpage" layout="grid">
+            <!-- <ng-template pTemplate="header">
 
-                <div class="flex wrap-on-mobile-top">
-                    <div class="ml-3">
-                        <p-dropdown [options]="types" [(ngModel)]="selectedType" (onChange)="selectProject($event)"
-                            optionLabel="name"></p-dropdown>
+                <div class="grid">
+
+                    <div class="col-12 md:col-6 lg:col-3">
+
                     </div>
-                    <div class="ml-3">
-                        <p-dropdown [options]="types" [(ngModel)]="selectedType" (onChange)="selectProject($event)"
-                            optionLabel="name"></p-dropdown>
-                    </div>
-                    <div class="ml-3">
-                        <p-selectButton [options]="stateOptions" [(ngModel)]="value1" optionLabel="label"
-                            optionValue="value"></p-selectButton>
-                    </div>
-                </div>
-            </div>
-        </ng-template>
-        <div class="grid img-cards">
-            Test
-        </div>
-    </p-panel> -->
 
-    <p-dataView #dv [value]="photos.photo" [lazy]="true" [totalRecords]="photos.total" [loading]="isLoading"
-        (onLazyLoad)="loadNext($event)" [paginator]="true" [rows]="photos.perpage" layout="grid">
-        <ng-template pTemplate="header">
 
-            <div class="flex flex-column md:flex-row md:justify-content-between">
+                    <div class="col-12 md:col-6 lg:col-3">
+                        <div class="flex justify-content-center flex-wrap">
+                            <div>
+                                <p class="option-header" tabindex="0" aria-hidden="false">Date Taken From</p>
+                                <p-calendar [(ngModel)]="fromDate" [showIcon]="false" [readonlyInput]="true"
+                                    [showButtonBar]="true" inputId="fromDate" (onSelect)="dateTakeChange($event)">
+                                </p-calendar>
+                            </div>
 
-                <div class="view search-orientation-picker-view">
-                    <p class="option-header" tabindex="0" aria-hidden="false">Orientation</p>
-                    <div class="orientation-list">
-                        <div *ngFor="let enumOrientation of orientation | keyvalue"
-                            class="orientation-button {{enumOrientation.value}}"
-                            [ngClass]="{'checked': selectedOrientation(enumOrientation.value) }" tabindex="0"
-                            aria-hidden="false" (click)="selectOrientation(enumOrientation.value)">
+                            <div>
+                                <p class="option-header" tabindex="0" aria-hidden="false">Date Taken To</p>
+                               
+                            </div>
                         </div>
                     </div>
+
+                    <div class="col-12 md:col-6 lg:col-3">
+
+                    </div>
+
+                    <div class="col-12 md:col-6 lg:col-3">
+                        <p class="option-header" tabindex="0" aria-hidden="false">Content</p>
+                        <p-multiSelect [options]="imageContentTypes" [(ngModel)]="selectedImageContentTypes"
+                            [filter]="false" [showClear]="false" [showHeader]="false" optionLabel="label"
+                            (onChange)="imageContentTypeChange($event)">
+                        </p-multiSelect>
+                    </div>
+
                 </div>
-
-                <div>
-                    <p class="option-header" tabindex="0" aria-hidden="false">Date Taken From</p>
-                    <p-calendar [(ngModel)]="fromDate" [showIcon]="false" [readonlyInput]="true" [showButtonBar]="true"
-                        inputId="fromDate" (onSelect)="dateTakeChange($event)"></p-calendar>
-                </div>
-
-                <div>
-                    <p class="option-header" tabindex="0" aria-hidden="false">Date Taken To</p>
-                    <p-calendar [(ngModel)]="toDate" [showIcon]="false" [readonlyInput]="true" [showButtonBar]="true"
-                        inputId="toDate" (onSelect)="dateTakeChange($event)"></p-calendar>
-                </div>
-
-                <div>
-                    <p class="option-header" tabindex="0" aria-hidden="false">Search in</p>
-                    <p-selectButton [options]="searchInOptions" [(ngModel)]="selectedSearchInOptions" optionLabel="name"
-                        optionValue="value" (onChange)="searchInChange($event)"></p-selectButton>
-                </div>
-
-                <div>
-                    <p class="option-header" tabindex="0" aria-hidden="false">Content</p>
-                    <p-multiSelect [options]="imageContentTypes" [(ngModel)]="selectedImageContentTypes"
-                        [filter]="false" [showClear]="false" [showHeader]="false" optionLabel="label"
-                        (onChange)="imageContentTypeChange($event)">
-                    </p-multiSelect>
-                </div>
-
-            </div>
-
-            <!-- <div class="flex flex-column md:flex-row md:justify-content-between">
-                <p-dropdown [options]="sortOptions" [(ngModel)]="sortKey" placeholder="Sort By Price" (onChange)="onSortChange($event)" styleClass="mb-2 md:mb-0"></p-dropdown>
-                <span class="p-input-icon-left mb-2 md:mb-0">
-                    <i class="pi pi-search"></i>
-                    <input type="search" pInputText placeholder="Search by Name" (input)="dv.filter($event.target.value)">
-                </span>
-                <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
-            </div> -->
-        </ng-template>
-        <ng-template let-photo pTemplate="listItem">
-            <span>List</span>
-            <!-- <div class="col-12">
+            </ng-template>
+             -->
+            <ng-template let-photo pTemplate="listItem">
+                <span>List</span>
+                <!-- <div class="col-12">
                 <div class="product-list-item">
                     <img [src]="'assets/showcase/images/demo/product/' + product.image" [alt]="product.name"/>
                     <div class="product-list-detail">
@@ -96,15 +63,15 @@
                     </div>
                 </div>
             </div> -->
-        </ng-template>
-        <ng-template let-photo pTemplate="gridItem">
-            <div class="img-card"
-                style="background-image:url('//live.staticflickr.com/{{photo.server}}/{{photo.id}}_{{photo.secret}}_n.jpg');">
-                <!-- <span>{{photo.id}}</span> -->
-                <!-- <img loading="lazy" height="200px"
+            </ng-template>
+            <ng-template let-photo pTemplate="gridItem">
+                <div class="img-card"
+                    style="background-image:url('//live.staticflickr.com/{{photo.server}}/{{photo.id}}_{{photo.secret}}_n.jpg');">
+                    <!-- <span>{{photo.id}}</span> -->
+                    <!-- <img loading="lazy" height="200px"
                     src="//live.staticflickr.com/{{photo.server}}/{{photo.id}}_{{photo.secret}}_n.jpg" /> -->
-            </div>
-            <!-- <div class="col-12 md:col-4">
+                </div>
+                <!-- <div class="col-12 md:col-4">
                 <div class="product-grid-item card">
                     <div class="product-grid-item-top">
                         <div>
@@ -125,6 +92,7 @@
                     </div>
                 </div>
             </div> -->
-        </ng-template>
-    </p-dataView>
+            </ng-template>
+        </p-dataView>
+    </div>
 </div>

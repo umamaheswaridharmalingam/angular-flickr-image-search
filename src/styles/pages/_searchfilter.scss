@@ -4,11 +4,11 @@
 }
 
 .image-collection-container {
-  // flex: 1 0 0%;
-  // border-left: 1px solid rgb(229, 232, 235);
+  flex: 1 0 0%;
+  border-left: 1px solid rgb(229, 232, 235);
   width: 100%;
   //padding: 0px 28px;
-  //min-height: 100vh;
+  min-height: 100vh;
 
   .collection-content {
     width: 100%;

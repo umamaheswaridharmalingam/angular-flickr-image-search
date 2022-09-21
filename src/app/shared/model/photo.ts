@@ -38,3 +38,19 @@ export class PhotosRootModel {
     }
   }
 }
+
+export class SearchFilterModel {
+  orientation!: string;
+  searchInText!: boolean;
+  contentType!: string;
+  fromDate!: Date;
+  toDate!: Date;
+  constructor(obj2clone?: SearchFilterModel, modifierObj?: {}) {
+    if (obj2clone) {
+      Object.assign(this, obj2clone);
+    }
+    if (modifierObj) {
+      Object.assign(this, modifierObj);
+    }
+  }
+}
